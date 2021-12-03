@@ -1,0 +1,53 @@
+Windows 10 GitBash
+1) Посмотреть где я - pwd
+2) Создать папку - mkdir qa
+3) Зайти в папку - cd /d/qa
+4) Создать 3 папки -  mkdir dir1 dir2 dir3
+5) Зайти в любоую папку - cd dir1
+6) Создать 5 файлов (3 txt, 2 json) - touch t1.txt t2.txt t3.txt j1.json j2.json
+7) Создать 3 папки - mkdir folder1 folder2 folder3
+8. Вывести список содержимого папки - ls -la
+9) + Открыть любой txt файл - vim t1.txt
+10) + написать туда что-нибудь, любой текст - Нажать "i", пишем текст 
+11) + сохранить и выйти - нажимаем esc :wq enter.
+12) Выйти из папки на уровень выше - cd ../
+13) переместить любые 2 файла, которые вы создали, в любую другую папку -  mv dir1/{t1.txt,t2.txt} dir2
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку - cp dir1/{j1.json,j2.json} dir3
+15) Найти файл по имени - find -name t1.txt
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает. cat t1.txt
+17) вывести несколько первых строк из текстового файла - head t1.txt ( по умолчанию 10 строк).  head -n 2(количсетво строк) t1.txt
+18) вывести несколько последних строк из текстового файла - tail t1.txt ( по умолчанию 10 строк).  tail -n 2(количсетво строк) t1.txt
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает - less t1.txt
+20) вывести дату и время - date
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000
+
+curl "http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000"
+
+Выдаёт это - $ curl "http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   185  100   185    0     0   2531      0 --:--:-- --:--:-- --:--:--  2569{"age":"32","family":{"children":[["Alex",24],["Kate",12]],"pets":{"cat":{"age":3,"name":"Sunny"},"dog":{"age":4,"name":"Luky"}},"u_salary_1_5_year":4000},"name":"Vadim","salary":1000}
+
+
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+Создаём файл vim s1.sh
+
+Пишем скрипт:
+#!/bin/bash
+cd /d/qa/script
+mkdir s1 s2 s3
+cd s1
+touch a1.txt a2.txt a3.txt b1.json b2.json
+mkdir folder1 folder2 folder3
+ls -la
+mv a1.txt a2.txt folder1/
+
+сохраняем, выходим.
+Присваеваем исполняемый флаг командой: chmod +x s1.sh
+Активируем скрипт командой sh s1.sh
+
