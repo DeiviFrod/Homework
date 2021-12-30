@@ -1,4 +1,4 @@
--- 1)Создать таблицу employees - id. serial,  primary key, employee_name. Varchar(50), not null
+-- 1)Г‘Г®Г§Г¤Г ГІГј ГІГ ГЎГ«ГЁГ¶Гі employees - id. serial,  primary key, employee_name. Varchar(50), not null
 
 create table employees ( 
 	id serial primary key,
@@ -7,7 +7,7 @@ create table employees (
 
 select * from employees;
 
---2) Наполнить таблицу employee 70 строками.
+--2) ГЌГ ГЇГ®Г«Г­ГЁГІГј ГІГ ГЎГ«ГЁГ¶Гі employee 70 Г±ГІГ°Г®ГЄГ Г¬ГЁ.
 insert into employees (employee_name)
 values ('Kathy'),('Shawn'),('Sandra'),('Pauline'),('Patricia'),('Christopher'),('Edward'),('Judith'),('Jennifer'),('Julie'),('Shirley'),('Kathy'),('Brandon'),
 ('Dennis'),('Rene'),('Michael'),('Monica'),('Deborah'),('Gloria'),('Brian'),('Teresa'),('Stephanie'),('Lauren'),('Tracy'),('Virginia'),('Margaret'),('Thomas'),
@@ -15,7 +15,7 @@ values ('Kathy'),('Shawn'),('Sandra'),('Pauline'),('Patricia'),('Christopher'),(
 ('Lillie'),('Phillip'),('Steven'),('Lori'),('Dawn'),('Philip'),('Chad'),('Peggy'),('Carol'),('Karen'),('Esther'),('Christine'),('Edward'),('Carol'),('Claude'),
 ('Paul'),('Anna'),('Michael'),('Carlos'),('Donald'),('Jenny'),('Juan'),('Diane'),('Carmen'),('Brett'),('Beverly'),('Larry'),('John'),('Kimberly');
 
--- 3) Создать таблицу salary -id. Serial  primary key, - monthly_salary. Int, not null
+-- 3) Г‘Г®Г§Г¤Г ГІГј ГІГ ГЎГ«ГЁГ¶Гі salary -id. Serial  primary key, - monthly_salary. Int, not null
 create table salary1 (
 	id serial primary key,
 	monthly_salary int not null
@@ -23,11 +23,11 @@ create table salary1 (
 
 select * from salary1;
 
---4) Наполнить таблицу salary 15 строками
+--4) ГЌГ ГЇГ®Г«Г­ГЁГІГј ГІГ ГЎГ«ГЁГ¶Гі salary 15 Г±ГІГ°Г®ГЄГ Г¬ГЁ
 insert into salary1 (monthly_salary)
 values (1000),(1100),(1200),(1300),(1400),(1500),(1600),(1700),(1800),(1900),(2000),(2100),(2200),(2300),(2400),(2500);
 
---5) Создать таблицу employee_salary - id. Serial  primary key, - employee_id. Int, not null, unique - salary_id. Int, not null
+--5) Г‘Г®Г§Г¤Г ГІГј ГІГ ГЎГ«ГЁГ¶Гі employee_salary - id. Serial  primary key, - employee_id. Int, not null, unique - salary_id. Int, not null
 create table employee_salary ( 
 	id serial primary key,
 	employee_id int not null unique,
@@ -37,12 +37,12 @@ create table employee_salary (
 select * from employee_salary;
 drop table employee_salary
 
---6)Наполнить таблицу employee_salary 40 строками: - в 10 строк из 40 вставить несуществующие employee_id
+--6)ГЌГ ГЇГ®Г«Г­ГЁГІГј ГІГ ГЎГ«ГЁГ¶Гі employee_salary 40 Г±ГІГ°Г®ГЄГ Г¬ГЁ: - Гў 10 Г±ГІГ°Г®ГЄ ГЁГ§ 40 ГўГ±ГІГ ГўГЁГІГј Г­ГҐГ±ГіГ№ГҐГ±ГІГўГіГѕГ№ГЁГҐ employee_id
 insert into employee_salary (employee_id, salary_id)
 values (1, 6),(2,7),(3,11),(4,15),(5,13),(6, 15),(7,4),(8,11),(9,1),(10,13),(11, 3),(12,3),(13,11),(14,6),(15,11),(16, 7),(17,4),(18,11),(19,1),(20,8),
-(21, 2),(22,8),(23,11),(24,15),(25,1),(26, 5),(27,1),(28,11),(29,2),(30,1),(31, 77),(32,93),(33,181),(34,86),(35,91),(36, 87),(37,94),(38,91),(39,99),(40,89);
+(21, 2),(22,8),(23,11),(24,15),(25,1),(26, 5),(27,1),(28,11),(29,2),(30,1),(98, 7),(99,3),(100,11),(77,8),(87,9),(91, 7),(92,4),(93,1),(94,9),(95,9);
 
---7)Создать таблицу roles - id. Serial  primary key, - role_name. int, not null, unique
+--7)Г‘Г®Г§Г¤Г ГІГј ГІГ ГЎГ«ГЁГ¶Гі roles - id. Serial  primary key, - role_name. int, not null, unique
 create table roles1 ( 
 	id serial primary key,
 	role_name int not null unique
@@ -50,11 +50,11 @@ create table roles1 (
 
 select * from roles1;
 
---8)Поменять тип столба role_name с int на varchar(30)
+--8)ГЏГ®Г¬ГҐГ­ГїГІГј ГІГЁГЇ Г±ГІГ®Г«ГЎГ  role_name Г± int Г­Г  varchar(30)
 alter table roles1
 alter column role_name type varchar(30) using role_name::varchar(30);
 
---9)Наполнить таблицу roles 20 строками:
+--9)ГЌГ ГЇГ®Г«Г­ГЁГІГј ГІГ ГЎГ«ГЁГ¶Гі roles 20 Г±ГІГ°Г®ГЄГ Г¬ГЁ:
 
 insert into roles1 (role_name)
 values ('Junior Python developer'),('Middle Python developer'),('Senior Python developer'),('Junior Java developer'),('Middle Java developer'),
@@ -62,10 +62,10 @@ values ('Junior Python developer'),('Middle Python developer'),('Senior Python d
 ('Middle Manual QA engineer'),('Senior Manual QA engineer'),('Project Manager'),('Designer'),('HR'),
 ('SEO'),('Sales manager'),('Junior Automation QA engineer'),('Middle Automation QA engineer'),('Senior Automation QA engineer');
 
---10)Создать таблицу roles_employee 
+--10)Г‘Г®Г§Г¤Г ГІГј ГІГ ГЎГ«ГЁГ¶Гі roles_employee 
 -- id. Serial  primary key, 
--- employee_id. Int, not null, unique (внешний ключ для таблицы employees, поле id)
--- role_id. Int, not null (внешний ключ для таблицы roles, поле id)
+-- employee_id. Int, not null, unique (ГўГ­ГҐГёГ­ГЁГ© ГЄГ«ГѕГ· Г¤Г«Гї ГІГ ГЎГ«ГЁГ¶Г» employees, ГЇГ®Г«ГҐ id)
+-- role_id. Int, not null (ГўГ­ГҐГёГ­ГЁГ© ГЄГ«ГѕГ· Г¤Г«Гї ГІГ ГЎГ«ГЁГ¶Г» roles, ГЇГ®Г«ГҐ id)
 create table roles_employee ( 
 	id serial primary key,
 	employee_id int not null unique,
@@ -78,7 +78,7 @@ create table roles_employee (
 
 select * from roles_employee;
 
---11)Наполнить таблицу roles_employee 40 строками:
+--11)ГЌГ ГЇГ®Г«Г­ГЁГІГј ГІГ ГЎГ«ГЁГ¶Гі roles_employee 40 Г±ГІГ°Г®ГЄГ Г¬ГЁ:
 insert into roles_employee (employee_id, role_id)
 values (7,2),(20,4),(3,9),(5,13),(23,4),(11,2),(10,9),(22,13),(21,3),(34,4),(6,7),
 (31,4),(32,2),(33,1),(35,11),(36,14),(37,2),(38,9),(39,13),(40,3),(41,4),
